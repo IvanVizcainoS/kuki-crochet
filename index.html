@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tienda Suave | E-commerce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+ 
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="logito.jpg" width="80" height="70" w alt="Kuki Crochet" class="logo-img">
+        kuki<span>crochet</span>
+      </div> 
+      <nav class="nav">
+        <a href="#">Inicio</a>
+        <a href="#">Productos</a>
+        <a href="#">Ofertas</a>
+        <a href="#">Contacto</a>
+      </nav>
+      <div class="cart-icon" id="cartBtn">
+        <i class="fas fa-shopping-cart"></i> 
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+      
+    </div>
+  </header>
+
+
+  <section class="hero">
+    <div class="container">
+      <h1>Productos con <span>estilo y suavidad</span></h1>
+      <p>Descubre nuestra colección curada con amor.</p>
+      <button class="btn-primary">Explorar ahora</button>
+    </div>
+  </section>
+
+  <section class="products container">
+    <h2>Nuestros Productos</h2>
+    <div class="product-grid" id="productGrid">
+    
+    </div>
+  </section>
+
+ 
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Carrito <span id="cartItemsCount">(0)</span></h3> 
+      <button class="close-cart" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+   
+    </div>
+    <div class="cart-total">
+      <p>Total: <strong id="cartTotal">$0.00</strong></p>
+      <button class="btn-checkout">Finalizar compra</button>
+    </div>
+  </div>
+
+ 
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
