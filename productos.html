@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productos | kuki crochet</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="logito.jpg" width="80" height="70" w alt="Kuki Crochet" class="logo-img">
+        kuki<span>crochet</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Materiales</a>
+        <a href="#">Guías</a>
+        <a href="#">Contacto</a>
+      </nav>
+      <div class="cart-icon" id="cartBtn">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- aaca van los productos-->
+  <section class="hero-products">
+    <div class="container">
+      <h1>Todos nuestros <span>dfgssfdsfsf</span></h1>
+      <p>ESTAS IMAGENES SON SOLO PARA TESTEAR TRANQUILOS JAJA</p>
+    </div>
+  </section>
+
+  <!-- fislotrs esta vaina va a ser por si le metemos filtros por ahora solo es para decir cuantos productos hay -->
+  <div class="filters container">
+    <p>8 productos disponibles</p>
+  </div>
+
+  <section class="products container">
+    <div class="product-grid" id="productGrid">
+      
+    </div>
+  </section>
+
+  
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Carrito <span id="cartItemsCount">(0)</span></h3>
+      <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-total">
+      <p>Total: <strong id="cartTotal">$0.00</strong></p>
+      <button class="btn-checkout">Finalizar compra</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
