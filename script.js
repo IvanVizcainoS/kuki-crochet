@@ -1,20 +1,59 @@
-// anotaciones por si se me olvida que eran estas vainas
-//tranquilos las imagenes solo las voy a usar como placeholder
+//anotaciones por si se me olvida algo
 const products = [
-  { id: 1, name: "makunga", price: 28.99, image: "https://i.pinimg.com/736x/48/86/f8/4886f889549e2c1e2da35482b64b6262.jpg" },
+  { id: 1, name: "Makunga", price: 28.99, image: "https://i.pinimg.com/736x/48/86/f8/4886f889549e2c1e2da35482b64b6262.jpg" },
   { id: 2, name: "JoJo", price: 99.99, image: "https://paninitienda.com/cdn/shop/products/99947_d1dbb048-f68a-476b-9be6-0d96b384d41e.jpg?v=1626722962&width=1024" },
   { id: 3, name: "Sr. Lennon", price: 35.00, image: "https://preview.redd.it/hola-sr-lennon-soy-su-fan-v0-tqf85ipp4bj81.png?auto=webp&s=18429937e29b46b229530db9988d65f770c26a3b" },
   { id: 4, name: "GATO", price: 29.99, image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=400" },
   { id: 5, name: "cartman", price: 42.00, image: "https://i.pinimg.com/736x/c4/5d/77/c45d77a2d03413f5eec2e39ccc788f9f.jpg" },
-  { id: 6, name: "no me la conteiner", price: 19.99, image: "https://i.pinimg.com/1200x/b9/40/44/b940449c9ba125e9468080493b7d38af.jpg" },
+  { id: 6, name: "nomelaconteiner", price: 19.99, image: "https://i.pinimg.com/1200x/b9/40/44/b940449c9ba125e9468080493b7d38af.jpg" },
   { id: 7, name: "calaca", price: 12.50, image: "https://i.pinimg.com/736x/f2/e0/3f/f2e03fe629cda6e9f529272e583c1f0e.jpg" },
-  { id: 8, name: "nose", price: 31.00, image: "https://images.unsplash.com/photo-1621989149090-153874a5eac2?w=400" }
+  { id: 8, name: "sepalabolaqueesesto", price: 31.00, image: "https://images.unsplash.com/photo-1621989149090-153874a5eac2?w=400" }
 ];
 
-// Carrito guardado aunque cierres el navegador
+// MATERIALES AHORA SE AGREGAN AL CARRITO
+const materials = [
+  {
+    id: 101,
+    name: "Hilo Algodón Premium 2",
+    price: 18.50,
+    brand: "el emoji te mira y juzga por tus actos",
+    image: "https://i.pinimg.com/736x/55/6d/1a/556d1adb1b688522507fe935a0f0edf0.jpg",
+    description: "fiumbaa descripcion.",
+    features: ["100% algodón", "a", "emoji", "mireeeen"]
+  },
+  {
+    id: 102,
+    name: "Relleno",
+    price: 25.00,
+    brand: "sepa",
+    image: "https://i.pinimg.com/736x/32/f4/aa/32f4aac86061b9a2d92bbdfd4bce6746.jpg",
+    description: "denme ideas.",
+    features: ["denme", "ideas", "equipo", "xd"]
+  },
+  {
+    id: 103,
+    name: "Agujas de Crochet",
+    price: 45.00,
+    brand: "pos agujas que mas quieren",
+    image: "https://i.pinimg.com/736x/47/cb/5d/47cb5d782683e3df266c913abb68b892.jpg",
+    description: "Las agujas",
+    features: ["a", "e", "i", "u"]
+  },
+  {
+    id: 104,
+    name: "Agujas de Crochet (otra vez)",
+    price: 45.00,
+    brand: "pos agujas que mas quieren",
+    image: "https://i.pinimg.com/1200x/66/d3/29/66d329639100349df71279a1c84cdd9d.jpg",
+    description: "AAAA",
+    features: ["a", "e", "i", "u"]
+  }
+];
+
+// Carrito guardado que se guarda aunque cierres el navegador osea se guarda es en local (lo uso asi mientras aprendo lo del servidor)
 let cart = JSON.parse(localStorage.getItem('kukiCart')) || [];
 
-// Elementos del DOM
+// Elementos del DOM osea la informacion solicitus de informacion y esas vainas
 const productGrid = document.getElementById('productGrid');
 const carousel = document.getElementById('carousel');
 const dotsContainer = document.getElementById('dots');
@@ -30,7 +69,7 @@ const cartCount = document.getElementById('cartCount');
 const cartItemsCount = document.getElementById('cartItemsCount');
 const cartTotal = document.getElementById('cartTotal');
 
-// CARRUSEL EN INDEX
+// CARRUSEL 
 let currentSlide = 0;
 const totalSlides = products.length;
 
@@ -41,14 +80,12 @@ function renderCarousel() {
   dotsContainer.innerHTML = '';
 
   products.forEach((product, index) => {
-    // Imagen del carrusel
     const slide = document.createElement('div');
     slide.className = 'carousel-item';
     slide.innerHTML = `<img src="${product.image}" alt="${product.name}" loading="lazy">`;
     slide.onclick = () => window.location.href = 'productos.html';
     carousel.appendChild(slide);
 
-    // Punto indicador
     const dot = document.createElement('span');
     dot.className = 'dot';
     dot.onclick = () => goToSlide(index);
@@ -81,20 +118,16 @@ function goToSlide(index) {
   updateCarousel();
 }
 
-// Autopasadda cada 5 segundos
 let autoSlide = setInterval(nextSlide, 5000);
 
-// Pausar carrusel al pasar el mouse encima jskldaksjdla
 if (document.querySelector('.carousel-container')) {
   document.querySelector('.carousel-container').addEventListener('mouseenter', () => clearInterval(autoSlide));
   document.querySelector('.carousel-container').addEventListener('mouseleave', () => autoSlide = setInterval(nextSlide, 5000));
 }
 
-// Botones del carrusel
 if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
-// Renderizar productos solo en productos.html
 function renderProducts() {
   if (!productGrid) return;
   productGrid.innerHTML = '';
@@ -105,7 +138,7 @@ function renderProducts() {
       <img src="${product.image}" alt="${product.name}" loading="lazy">
       <div class="product-info">
         <h3>${product.name}</h3>
-        <p>producto</p>
+        <p>Hecho a mano con amor</p>
         <div class="price">$${product.price.toFixed(2)}</div>
         <button class="btn-add" onclick="addToCart(${product.id})">
           Agregar al carrito
@@ -116,7 +149,50 @@ function renderProducts() {
   });
 }
 
-// codigo para agregar vainas al carrito (creo que si funciona)
+// Renderizar materiales con botón de agregar al carrito osea la imagencita esa que sale en la pestaña de carrito
+function renderMaterials() {
+  const materialsList = document.getElementById('materialsList');
+  if (!materialsList) return;
+
+  materialsList.innerHTML = '';
+  materials.forEach(mat => {
+    const item = document.createElement('div');
+    item.className = 'material-item';
+    item.innerHTML = `
+      <div class="material-image">
+        <img src="${mat.image}" alt="${mat.name}" loading="lazy">
+      </div>
+      <div class="material-info">
+        <h3>${mat.name}</h3>
+        <div class="brand">${mat.brand}</div>
+        <div class="material-price">$${mat.price.toFixed(2)}</div>
+        <p>${mat.description}</p>
+        <div class="material-features">
+          ${mat.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
+        </div>
+        <button class="btn-add-material" onclick="addMaterialToCart(${mat.id})">
+          Agregar al carrito
+        </button>
+      </div>
+    `;
+    materialsList.appendChild(item);
+  });
+}
+
+// Agregar material al carrito 
+function addMaterialToCart(id) {
+  const material = materials.find(m => m.id === id);
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...material, quantity: 1 });
+  }
+  saveCart();
+  updateCartUI();
+  showNotification(`${material.name} agregado al carrito`);
+}
+
 function addToCart(id) {
   const product = products.find(p => p.id === id);
   const existing = cart.find(item => item.id === id);
@@ -198,7 +274,6 @@ function closeCartSidebar() {
   overlay.classList.remove('active');
 }
 
-// circulito ese que sale al lado del carrito no se como se llama (notificacion)
 function showNotification(message) {
   const existing = document.querySelector('.notification');
   if (existing) existing.remove();
@@ -226,9 +301,24 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Inicializar todo
+//no toquen el carrusel esa vaina costo acomodarla AAAA
+//nota: acortar el codigo. como? ni idea
+
+// vaina esa que pone una vaina morada debajo de la vaina esa(por fin funciona en Productos también)
 document.addEventListener('DOMContentLoaded', () => {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav a');
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+
   renderCarousel();
   renderProducts();
+  renderMaterials();
   updateCartUI();
 });
