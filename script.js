@@ -4,22 +4,22 @@ const products = [
     id: 1, 
     name: "Pollo", 
     price: 28.99, 
-    image: "pollo.jpg",
+    image: "Pollo.jpg",
     description: "¡El pollo más tierno que todos quieren abrazar! Ideal para regalar o decorar",
-    promo: "2x1" // ← Promocion. porque costo tanto hacer esto? me tomo una hora
+    promo: "2x1" 
   },
   { 
     id: 2, 
     name: "Cheff", 
     price: 99.99, 
-    image: "Chef.jpg",
+    image: "chef.jpg",
     description: "War....war never changes"
   },
   { 
     id: 3, 
     name: "Jojo", 
     price: 35.00, 
-    image: "jojo.jpg",
+    image: "Jojo.jpg",
     description: "Pequeño jojo hecho de hilo y rellenado"
   },
   { 
@@ -34,7 +34,7 @@ const products = [
     id: 5, 
     name: "Flores crochet", 
     price: 42.00, 
-    image: "Flores.jpg",
+    image: "flores.jpg",
     description: "Variedad de flores tejidas crochet 100% tejidas",
     promo: "22%"
   },
@@ -50,7 +50,7 @@ const products = [
     id: 7, 
     name: "Cajas mini Ballenas", 
     price: 12.50, 
-    image: "Cajas ballenas.jpg",
+    image: "cajas Ballenas.jpg",
     description: "cajas llenas de mini ballenas compra una lleva 2",
     promo: "2x1"
   },
@@ -70,18 +70,18 @@ const products = [
   },
   { 
     id: 10, 
-    name: "Conejo", 
+    name: "Arbolito", 
     price: 31.00, 
-    image: "https://www.crochetisimo.com/wp-content/uploads/2024/03/Conejita-amigurumi-coke.png",
-    description: "Pequeño conejo tejido"
+    image: "https://i.pinimg.com/736x/5b/af/2f/5baf2f23a0199854c4a56f2ca8df54f3.jpg",
+    description: "Pequeño arbol tejido"
   },
   { 
     id: 11, 
-    name: "Arbolitos Navideños", 
+    name: "Ovejita",
     price: 12.50, 
     image: "https://preview.redd.it/my-first-amigurumi-v0-23xgon3w3arf1.png?auto=webp&s=85ec4940a6a8dbf0c85ae5342abc707d3f7a3ef8",
-    description: "Desde....se siente que llega diciembre",
-    promo: "2x1+20%"
+    description: "Oveja",
+    promo: "20%"
   },
   { 
     id: 12, 
@@ -92,7 +92,6 @@ const products = [
   }
 ];
 
-// carrito materiales
 const materials = [
   {
     id: 101,
@@ -159,10 +158,8 @@ const materials = [
   }
 ];
 
-// Carrito guardado que se guarda aunque cierres el navegador osea se guarda es en local (lo uso asi mientras aprendo lo del servidor)
 let cart = JSON.parse(localStorage.getItem('kukiCart')) || [];
 
-// Elementos del DOM osea la informacion solicitus de informacion y esas vainas
 const productGrid = document.getElementById('productGrid');
 const carousel = document.getElementById('carousel');
 const dotsContainer = document.getElementById('dots');
@@ -178,13 +175,11 @@ const cartCount = document.getElementById('cartCount');
 const cartItemsCount = document.getElementById('cartItemsCount');
 const cartTotal = document.getElementById('cartTotal');
 
-// CARRUSEL 
 let currentSlide = 0;
 const totalSlides = products.length;
 
 function renderCarousel() {
   if (!carousel) return;
-
   carousel.innerHTML = '';
   dotsContainer.innerHTML = '';
 
@@ -237,7 +232,6 @@ if (document.querySelector('.carousel-container')) {
 if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
-// RENDER PRODUCTOS CON DESCRIPCIONES ÚNICAS Y PROMO 2X1
 function renderProducts() {
   if (!productGrid) return;
   productGrid.innerHTML = '';
@@ -266,7 +260,6 @@ function renderProducts() {
   });
 }
 
-// Renderizar materiales con botón de agregar al carrito
 function renderMaterials() {
   const materialsList = document.getElementById('materialsList');
   if (!materialsList) return;
@@ -296,7 +289,6 @@ function renderMaterials() {
   });
 }
 
-// Agregar material al carrito 
 function addMaterialToCart(id) {
   const material = materials.find(m => m.id === id);
   const existing = cart.find(item => item.id === id);
@@ -418,9 +410,85 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-//nota: acortar el codigo. como? ni idea
+// === CHECKOUT Y MODALES ===
+function createModal(type) {
+  const modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.id = 'modal' + (type === 'invoice' ? 'Invoice' : 'Success');
 
-// linea morada debajo de pagina
+  if (type === 'invoice') {
+    modal.innerHTML = `
+      <div class="modal-content">
+        <h3>Resumen de tu <span>compra</span></h3>
+        <div class="invoice-details" id="invoiceDetails"></div>
+        <div class="modal-buttons">
+          <button class="btn-modal btn-cancel" onclick="closeModal('modalInvoice')">Cancelar</button>
+          <button class="btn-modal btn-confirm" onclick="confirmPurchase()">Confirmar compra</button>
+        </div>
+      </div>
+    `;
+  } else {
+    modal.innerHTML = `
+      <div class="modal-content">
+        <h3>¡Gracias por tu compra!</h3>
+        <p>Tu pedido está siendo preparado con mucho cariño</p>
+        <div style="font-size:4rem;margin:1rem 0;">Tejido</div>
+        <button class="btn-modal btn-confirm" onclick="closeModal('modalSuccess'); closeCartSidebar();">¡Genial!</button>
+      </div>
+    `;
+  }
+  document.body.appendChild(modal);
+}
+
+function showInvoice() {
+  if (cart.length === 0) {
+    showNotification("Tu carrito está vacío");
+    return;
+  }
+
+  if (!document.getElementById('modalInvoice')) createModal('invoice');
+  if (!document.getElementById('modalSuccess')) createModal('success');
+
+  const details = document.getElementById('invoiceDetails');
+  let subtotal = 0;
+  let html = '';
+
+  cart.forEach(item => {
+    const itemTotal = item.price * item.quantity;
+    subtotal += itemTotal;
+    html += `<p><span>${item.name} × ${item.quantity}</span> <strong>$${itemTotal.toFixed(2)}</strong></p>`;
+  });
+
+  const envio = subtotal > 0 ? 8.00 : 0;
+  const total = subtotal + envio;
+
+  html += `<p><span>Envío</span> <strong>$${envio.toFixed(2)}</strong></p>`;
+  html += `<p class="total-invoice"><span>TOTAL</span> <strong>$${total.toFixed(2)}</strong></p>`;
+
+  details.innerHTML = html;
+  document.getElementById('modalInvoice').classList.add('active');
+}
+
+function confirmPurchase() {
+  document.getElementById('modalInvoice').classList.remove('active');
+  document.getElementById('modalSuccess').classList.add('active');
+  
+  cart = [];
+  localStorage.removeItem('kukiCart');
+  updateCartUI();
+  showNotification("¡Compra realizada con éxito!");
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
+}
+
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.btn-checkout') || e.target.closest('.btn-checkout')) {
+    showInvoice();
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navLinks = document.querySelectorAll('.nav a');
@@ -434,7 +502,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   renderCarousel();
-  renderProducts(); 
+  renderProducts();
   renderMaterials();
   updateCartUI();
 });
