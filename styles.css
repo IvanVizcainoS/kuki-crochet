@@ -1,5 +1,3 @@
-/*no toquen el carrusel esa vaina costo acomodarla AAAA*/ 
-/*nota: acortar el codigo. como? ni idea*/
 * {
   margin: 0;
   padding: 0;
@@ -135,7 +133,7 @@ body {
 .hero p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #666;
+  color: contactos#666;
 }
 
 .btn-primary {
@@ -313,7 +311,9 @@ body {
   gap: 2rem;
 }
 
+/* zona de promocion*/
 .product-card {
+  position: relative;
   background: white;
   border-radius: 16px;
   overflow: hidden;
@@ -370,6 +370,28 @@ body {
 
 .btn-add:hover {
   background: #9c8ab8;
+}
+
+/* BURBUJA DE PROMOCIÓN */
+.promo-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4757;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 50px;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(255,71,87,0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
 .hero-products h1 span {
@@ -705,4 +727,226 @@ body {
     right: -100%;
   }
 }
-/*PORQUE ESTA TAN LARGO EL CSS AYUDA LLAMEN A DIOS*/
+
+/*aqui empieza el contacto*/
+
+.hero-contact {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-contact h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.hero-contact h1 span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.hero-contact p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  padding: 4rem 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(213,168,199,0.15);
+  transition: all 0.3s ease;
+  border: 2px solid #f8e8f8;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 35px rgba(213,168,199,0.25);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.8rem;
+  box-shadow: 0 6px 20px rgba(213,168,199,0.4);
+}
+
+.info-card h3 {
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.contact-form-section {
+  padding: 4rem 0;
+  background: white;
+  margin: 3rem auto;
+  max-width: 700px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(213,168,199,0.2);
+  width: 90%;
+}
+
+.form-container {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  color: var(--dark);
+}
+
+.form-container h2 span {
+  color: var(--primary);
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e8d5e8;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: #fdfaf7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(213,168,199,0.2);
+}
+
+.yarn-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  margin-top: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s ease;
+}
+
+.form-group:focus-within .yarn-line {
+  transform: scaleX(1);
+}
+
+.btn-submit {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 6px 20px rgba(213,168,199,0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  background: #c890c8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(213,168,199,0.6);
+}
+
+.btn-submit span {
+  position: relative;
+  z-index: 2;
+}
+
+/* responsive de contacto */
+@media (max-width: 768px) {
+  .hero-contact h1 { font-size: 2.3rem; }
+  .info-grid { grid-template-columns: 1fr; }
+  .contact-form-section { width: 95%; }
+  .form-group { max-width: 100%; }
+}
+
+/*promocion esta parte fue dificil de hacer*/
+.promo-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4757;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 30px;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+  animation: pulse 2s infinite;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Mejora visual del texto de descripción */
+.product-info p {
+  color: #666;
+  font-size: 0.92rem;
+  font-style: italic;
+  min-height: 40px;
+  margin-bottom: 1rem;
+}
