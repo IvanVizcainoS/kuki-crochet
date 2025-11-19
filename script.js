@@ -12,14 +12,14 @@ const products = [
     id: 2, 
     name: "Cheff", 
     price: 9000, 
-    image: "Chef.jpg",
-    description: "gran chef"
+    image: "chef.jpg",
+    description: "War....war never changes"
   },
   { 
     id: 3, 
     name: "Jojo", 
     price: 140000, 
-    image: "jojo.jpg",
+    image: "Jojo.jpg",
     description: "Pequeño jojo hecho de hilo y rellenado"
   },
   { 
@@ -34,7 +34,7 @@ const products = [
     id: 5, 
     name: "Flores crochet", 
     price: 5000, 
-    image: "Flores.jpg",
+    image: "flores.jpg",
     description: "Variedad de flores tejidas crochet 100% tejidas",
     promo: "22%"
   },
@@ -50,7 +50,7 @@ const products = [
     id: 7, 
     name: "Cajas mini Ballenas", 
     price: 4000, 
-    image: "Cajas ballenas.jpg",
+    image: "cajas Ballenas.jpg",
     description: "cajas llenas de mini ballenas compra una lleva 2",
     promo: "2x1"
   },
