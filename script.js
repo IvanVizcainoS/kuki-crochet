@@ -4,7 +4,7 @@ const products = [
     id: 1, 
     name: "Pollo", 
     price: 12000, 
-    image: "Pollo.jpg",
+    image: "pollo.jpg",
     description: "¡El pollo más tierno que todos quieren abrazar! Ideal para regalar o decorar",
     promo: "2x1" 
   },
@@ -12,14 +12,14 @@ const products = [
     id: 2, 
     name: "Cheff", 
     price: 9000, 
-    image: "chef.jpg",
+    image: "Chef.jpg",
     description: "War....war never changes"
   },
   { 
     id: 3, 
     name: "Jojo", 
     price: 140000, 
-    image: "Jojo.jpg",
+    image: "jojo.jpg",
     description: "Pequeño jojo hecho de hilo y rellenado"
   },
   { 
@@ -34,7 +34,7 @@ const products = [
     id: 5, 
     name: "Flores crochet", 
     price: 5000, 
-    image: "flores.jpg",
+    image: "Flores.jpg",
     description: "Variedad de flores tejidas crochet 100% tejidas",
     promo: "22%"
   },
@@ -50,7 +50,7 @@ const products = [
     id: 7, 
     name: "Cajas mini Ballenas", 
     price: 4000, 
-    image: "cajas Ballenas.jpg",
+    image: "Cajas ballenas.jpg",
     description: "cajas llenas de mini ballenas compra una lleva 2",
     promo: "2x1"
   },
