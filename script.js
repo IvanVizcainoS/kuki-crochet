@@ -13,7 +13,7 @@ const products = [
     name: "Cheff", 
     price: 9000, 
     image: "Chef.jpg",
-    description: "War....war never changes"
+    description: "gran chef"
   },
   { 
     id: 3, 
