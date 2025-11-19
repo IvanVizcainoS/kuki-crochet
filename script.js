@@ -50,7 +50,7 @@ const products = [
     id: 7, 
     name: "Cajas mini Ballenas", 
     price: 12.50, 
-    image: "Caja Ballenas.jpg",
+    image: "Cajas ballenas.jpg",
     description: "cajas llenas de mini ballenas compra una lleva 2",
     promo: "2x1"
   },
