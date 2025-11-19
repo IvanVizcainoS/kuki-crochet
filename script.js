@@ -3,7 +3,7 @@ const products = [
   { 
     id: 1, 
     name: "Pollo", 
-    price: 28.99, 
+    price: 12000, 
     image: "Pollo.jpg",
     description: "¡El pollo más tierno que todos quieren abrazar! Ideal para regalar o decorar",
     promo: "2x1" 
@@ -11,21 +11,21 @@ const products = [
   { 
     id: 2, 
     name: "Cheff", 
-    price: 99.99, 
+    price: 9000, 
     image: "chef.jpg",
     description: "War....war never changes"
   },
   { 
     id: 3, 
     name: "Jojo", 
-    price: 35.00, 
+    price: 140000, 
     image: "Jojo.jpg",
     description: "Pequeño jojo hecho de hilo y rellenado"
   },
   { 
     id: 4, 
     name: "Llaveros Corazon", 
-    price: 29.99, 
+    price: 2000, 
     image: "Llaveros corazon.jpg",
     description: "Llaveros con forma de corazon para regalar",
     promo: "50%"
@@ -33,7 +33,7 @@ const products = [
   { 
     id: 5, 
     name: "Flores crochet", 
-    price: 42.00, 
+    price: 5000, 
     image: "flores.jpg",
     description: "Variedad de flores tejidas crochet 100% tejidas",
     promo: "22%"
@@ -41,7 +41,7 @@ const products = [
   { 
     id: 6, 
     name: "Lllaveros Luna estrella", 
-    price: 19.99, 
+    price: 4500, 
     image: "Luna estrella.jpg",
     description: "Llaveros de Luna y estrella pareja 2x1 compra uno y regala",
     promo: "2x1"
@@ -49,7 +49,7 @@ const products = [
   { 
     id: 7, 
     name: "Cajas mini Ballenas", 
-    price: 12.50, 
+    price: 4000, 
     image: "cajas Ballenas.jpg",
     description: "cajas llenas de mini ballenas compra una lleva 2",
     promo: "2x1"
@@ -57,28 +57,28 @@ const products = [
   { 
     id: 8, 
     name: "Vault Boy", 
-    price: 31.00, 
+    price: 4000, 
     image: "https://http2.mlstatic.com/D_NQ_NP_603255-MLA82399951006_022025-O.webp",
     description: "War....war never changes"
   },
   { 
     id: 9, 
     name: "Mini Pulpos", 
-    price: 31.00, 
+    price: 9000, 
     image: "minipulpos.jpg",
     description: "mini pulpos de multiples colores"
   },
   { 
     id: 10, 
     name: "Arbolito", 
-    price: 31.00, 
+    price: 5000, 
     image: "https://i.pinimg.com/736x/5b/af/2f/5baf2f23a0199854c4a56f2ca8df54f3.jpg",
     description: "Pequeño arbol tejido"
   },
   { 
     id: 11, 
     name: "Ovejita",
-    price: 12.50, 
+    price: 5000, 
     image: "https://preview.redd.it/my-first-amigurumi-v0-23xgon3w3arf1.png?auto=webp&s=85ec4940a6a8dbf0c85ae5342abc707d3f7a3ef8",
     description: "Oveja",
     promo: "20%"
@@ -86,7 +86,7 @@ const products = [
   { 
     id: 12, 
     name: "Orejas Largas", 
-    price: 22.50, 
+    price: 8000, 
     image: "https://www.pixeljar.com.co/cdn/shop/files/PIXEL_JAR_Creaciones_Dani_Amigurumis_Personalizados_1.png?v=1706807582",
     description: "Conejo de orejas largas",
   }
@@ -96,7 +96,7 @@ const materials = [
   {
     id: 101,
     name: "Hilo para crochet",
-    price: 18.50,
+    price: 10000,
     brand: "Hilo Utilizado para Crochet",
     image: "https://irp-cdn.multiscreensite.com/137f54ce/files/uploaded/MAXI%20ALGODON.JPG",
     description: "Esta fibra está compuesta de algodón y otras fibras recicladas. Es ideal para tejer amigurumis, blusas, sacos, bolsos, entre otros productos. Puedes tejerla en tecnicas como crochet.",
@@ -105,7 +105,7 @@ const materials = [
   {
     id: 102,
     name: "Relleno",
-    price: 25.00,
+    price: 6000,
     brand: "sepa",
     image: "https://m.media-amazon.com/images/I/61GNLecWBCL.jpg",
     description: "Algodón Siliconado en paquete por 100 gramos, es una fibra antibacteriana, antialérgica y antiácaros, además es lavable, durable y resistente perfecta para rellenar tus amigurumis y todo tipo de manualidades..",
@@ -114,7 +114,7 @@ const materials = [
   {
     id: 103,
     name: "Agujas de Crochet",
-    price: 45.00,
+    price: 5500,
     brand: "Agujas Crochet diferentes medidas",
     image: "agujas.jpg",
     description: "Este set de agujas de crochet viene con 8 agujas. Diferentes medidas para que tejas todos los calibres delgados de lana. Su mango de silicona las hace una de las favoritas de nuestros tejedores.",
@@ -123,7 +123,7 @@ const materials = [
   {
     id: 104,
     name: "Tijeras",
-    price: 45.00,
+    price: 3500,
     brand: "Tijeras Para Crochet",
     image: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00694128878877L3.jpg",
     description: "paquete de 2 tijeras de 11 pulgadas, corte preciso, cuchillas de acero inoxidable de la más alta calidad, bordes afilados y larga vida útil de corte. Para decoupage, cartón, tela, fotos, etc.",
@@ -132,7 +132,7 @@ const materials = [
   {
     id: 105,
     name: "Aguja Lanera clasica",
-    price: 45.00,
+    price: 1500,
     brand: "Aguja lanera para coser las partes",
     image: "Aguja lanera.jpg ",
     description: "Aguja lanera punta roma Ideal para lanas de grosor medio y para esconder las hebras sueltas del tejido el Numero de la aguja depende del grosor de la lana a emplear.",
@@ -141,7 +141,7 @@ const materials = [
   {
     id: 106,
     name: "Pack 100 Ojos y narices de seguridad",
-    price: 45.00,
+    price: 6500,
     brand: "Lotes de Ojos y narices para crochet",
     image: "Ojos.jpg",
     description: "Diferentes piezas de ojos y narices de seguridad, juego de manualidades con caja de almacenamiento",
@@ -150,7 +150,7 @@ const materials = [
   {
     id: 107,
     name: "Marcadores de Puntos X20",
-    price: 45.00,
+    price: 2500,
     brand: "Lote de 20",
     image: "Ganchos.jpg",
     description: "Set de marcadores tipo imperdible para crochet. 10 colores diferentes para organizar tus tejidos. Fáciles de usar, no dañan el hilo. Ideales para mochilas, amigurumis y prendas",
@@ -177,6 +177,16 @@ const cartTotal = document.getElementById('cartTotal');
 
 let currentSlide = 0;
 const totalSlides = products.length;
+
+// esto es pa ponerl los precios en pesos colombianos
+function formatCOP(number) {
+  return new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  }).format(number);
+}
 
 function renderCarousel() {
   if (!carousel) return;
@@ -250,7 +260,7 @@ function renderProducts() {
       <div class="product-info">
         <h3>${product.name}</h3>
         <p>${product.description}</p>
-        <div class="price">$${product.price.toFixed(2)}</div>
+        <div class="price">${formatCOP(product.price)}</div>
         <button class="btn-add" onclick="addToCart(${product.id})">
           Agregar al carrito
         </button>
@@ -275,7 +285,7 @@ function renderMaterials() {
       <div class="material-info">
         <h3>${mat.name}</h3>
         <div class="brand">${mat.brand}</div>
-        <div class="material-price">$${mat.price.toFixed(2)}</div>
+        <div class="material-price">${formatCOP(mat.price)}</div>
         <p>${mat.description}</p>
         <div class="material-features">
           ${mat.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
@@ -340,7 +350,7 @@ function updateCartUI() {
       <img src="${item.image}" alt="${item.name}">
       <div class="cart-item-info">
         <h4>${item.name}</h4>
-        <p>$${item.price.toFixed(2)}</p>
+        <p>${formatCOP(item.price)}</p>
         <div class="quantity-controls">
           <button onclick="changeQuantity(${item.id},-1)">–</button>
           <span>${item.quantity}</span>
@@ -352,7 +362,7 @@ function updateCartUI() {
     cartItems.appendChild(el);
   });
 
-  if (cartTotal) cartTotal.textContent = `$${total.toFixed(2)}`;
+  if (cartTotal) cartTotal.textContent = formatCOP(total);
 }
 
 function changeQuantity(id, change) {
@@ -410,7 +420,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// === CHECKOUT Y MODALES ===
+// esto es para cuando se finaliza la compra
 function createModal(type) {
   const modal = document.createElement('div');
   modal.className = 'modal';
@@ -456,14 +466,14 @@ function showInvoice() {
   cart.forEach(item => {
     const itemTotal = item.price * item.quantity;
     subtotal += itemTotal;
-    html += `<p><span>${item.name} × ${item.quantity}</span> <strong>$${itemTotal.toFixed(2)}</strong></p>`;
+    html += `<p><span>${item.name} × ${item.quantity}</span> <strong>${formatCOP(itemTotal)}</strong></p>`;
   });
 
-  const envio = subtotal > 0 ? 8.00 : 0;
+  const envio = subtotal > 0 ? 15000 : 0;
   const total = subtotal + envio;
 
-  html += `<p><span>Envío</span> <strong>$${envio.toFixed(2)}</strong></p>`;
-  html += `<p class="total-invoice"><span>TOTAL</span> <strong>$${total.toFixed(2)}</strong></p>`;
+  html += `<p><span>Envío</span> <strong>${formatCOP(envio)}</strong></p>`;
+  html += `<p class="total-invoice"><span>TOTAL</span> <strong>${formatCOP(total)}</strong></p>`;
 
   details.innerHTML = html;
   document.getElementById('modalInvoice').classList.add('active');
