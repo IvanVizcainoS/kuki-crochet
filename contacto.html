@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto | kuki crochet</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="logito.jpg" width="80" height="70" alt="Kuki Crochet" class="logo-img">
+        kuki<span>crochet</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="materiales.html">Materiales</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="cart-icon" id="cartBtn">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-contact">
+    <div class="container">
+      <h1>Contactate con <span>nosotros</span>!</h1>
+      <p>Tu es importante para nuestra tienda</p>
+    </div>
+  </section>
+
+  <!-- INFO DE CONTACTO -->
+  <section class="contact-info container">
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+        <h3>Correo</h3>
+        <p>kukicrochet@gmail.com</p>
+      </div>
+      <div class="info-card">
+        <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>+51 987 654 321</p>
+      </div>
+      <div class="info-card">
+        <div class="icon-circle"><i class="fab fa-instagram"></i></div>
+        <h3>Instagram</h3>
+        <p>@kuki.crochet</p>
+      </div>
+      <div class="info-card">
+        <div class="icon-circle"><i class="fab fa-tiktok"></i></div>
+        <h3>TikTok</h3>
+        <p>@kukicrochet</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="contact-form-section container">
+    <div class="form-container">
+      <h2>Contacta <span>nos</span></h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required placeholder="Ej: Ana María">
+          <div class="yarn-line"></div>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" required placeholder="ana@gmail.com">
+          <div class="yarn-line"></div>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" required rows="5" placeholder="¡Hola! me comunico por..."></textarea>
+          <div class="yarn-line"></div>
+        </div>
+        <button type="submit" class="btn-submit">
+          <span>Enviar Mensaje</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Carrito <span id="cartItemsCount">(0)</span></h3>
+      <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-total">
+      <p>Total: <strong id="cartTotal">$0.00</strong></p>
+      <button class="btn-checkout">Finalizar compra</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
