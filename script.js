@@ -1,52 +1,161 @@
 //anotaciones por si se me olvida algo
 const products = [
-  { id: 1, name: "Makunga", price: 28.99, image: "https://i.pinimg.com/736x/48/86/f8/4886f889549e2c1e2da35482b64b6262.jpg" },
-  { id: 2, name: "JoJo", price: 99.99, image: "https://paninitienda.com/cdn/shop/products/99947_d1dbb048-f68a-476b-9be6-0d96b384d41e.jpg?v=1626722962&width=1024" },
-  { id: 3, name: "Sr. Lennon", price: 35.00, image: "https://preview.redd.it/hola-sr-lennon-soy-su-fan-v0-tqf85ipp4bj81.png?auto=webp&s=18429937e29b46b229530db9988d65f770c26a3b" },
-  { id: 4, name: "GATO", price: 29.99, image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=400" },
-  { id: 5, name: "cartman", price: 42.00, image: "https://i.pinimg.com/736x/c4/5d/77/c45d77a2d03413f5eec2e39ccc788f9f.jpg" },
-  { id: 6, name: "nomelaconteiner", price: 19.99, image: "https://i.pinimg.com/1200x/b9/40/44/b940449c9ba125e9468080493b7d38af.jpg" },
-  { id: 7, name: "calaca", price: 12.50, image: "https://i.pinimg.com/736x/f2/e0/3f/f2e03fe629cda6e9f529272e583c1f0e.jpg" },
-  { id: 8, name: "sepalabolaqueesesto", price: 31.00, image: "https://images.unsplash.com/photo-1621989149090-153874a5eac2?w=400" }
+  { 
+    id: 1, 
+    name: "Pollo", 
+    price: 28.99, 
+    image: "Pollo.jpg",
+    description: "¡El pollo más tierno que todos quieren abrazar! Ideal para regalar o decorar",
+    promo: "2x1" // ← Promocion. porque costo tanto hacer esto? me tomo una hora
+  },
+  { 
+    id: 2, 
+    name: "Cheff", 
+    price: 99.99, 
+    image: "chef.jpg",
+    description: "War....war never changes"
+  },
+  { 
+    id: 3, 
+    name: "Jojo", 
+    price: 35.00, 
+    image: "Jojo.jpg",
+    description: "Pequeño jojo hecho de hilo y rellenado"
+  },
+  { 
+    id: 4, 
+    name: "Llaveros Corazon", 
+    price: 29.99, 
+    image: "Llaveros corazon.jpg",
+    description: "Llaveros con forma de corazon para regalar",
+    promo: "50%"
+  },
+  { 
+    id: 5, 
+    name: "Flores crochet", 
+    price: 42.00, 
+    image: "flores.jpg",
+    description: "Variedad de flores tejidas crochet 100% tejidas",
+    promo: "22%"
+  },
+  { 
+    id: 6, 
+    name: "Lllaveros Luna estrella", 
+    price: 19.99, 
+    image: "Luna estrella.jpg",
+    description: "Llaveros de Luna y estrella pareja 2x1 compra uno y regala",
+    promo: "2x1"
+  },
+  { 
+    id: 7, 
+    name: "Cajas mini Ballenas", 
+    price: 12.50, 
+    image: "cajas Ballenas.jpg",
+    description: "cajas llenas de mini ballenas compra una lleva 2",
+    promo: "2x1"
+  },
+  { 
+    id: 8, 
+    name: "Vault Boy", 
+    price: 31.00, 
+    image: "https://http2.mlstatic.com/D_NQ_NP_603255-MLA82399951006_022025-O.webp",
+    description: "War....war never changes"
+  },
+  { 
+    id: 9, 
+    name: "Mini Pulpos", 
+    price: 31.00, 
+    image: "minipulpos.jpg",
+    description: "mini pulpos de multiples colores"
+  },
+  { 
+    id: 10, 
+    name: "Conejo", 
+    price: 31.00, 
+    image: "https://www.crochetisimo.com/wp-content/uploads/2024/03/Conejita-amigurumi-coke.png",
+    description: "Pequeño conejo tejido"
+  },
+  { 
+    id: 11, 
+    name: "Arbolitos Navideños", 
+    price: 12.50, 
+    image: "https://preview.redd.it/my-first-amigurumi-v0-23xgon3w3arf1.png?auto=webp&s=85ec4940a6a8dbf0c85ae5342abc707d3f7a3ef8",
+    description: "Desde....se siente que llega diciembre",
+    promo: "2x1+20%"
+  },
+  { 
+    id: 12, 
+    name: "Orejas Largas", 
+    price: 22.50, 
+    image: "https://www.pixeljar.com.co/cdn/shop/files/PIXEL_JAR_Creaciones_Dani_Amigurumis_Personalizados_1.png?v=1706807582",
+    description: "Conejo de orejas largas",
+  }
 ];
 
-// MATERIALES AHORA SE AGREGAN AL CARRITO
+// carrito materiales
 const materials = [
   {
     id: 101,
-    name: "Hilo Algodón Premium 2",
+    name: "Hilo para crochet",
     price: 18.50,
-    brand: "el emoji te mira y juzga por tus actos",
-    image: "https://i.pinimg.com/736x/55/6d/1a/556d1adb1b688522507fe935a0f0edf0.jpg",
-    description: "fiumbaa descripcion.",
-    features: ["100% algodón", "a", "emoji", "mireeeen"]
+    brand: "Hilo Utilizado para Crochet",
+    image: "https://irp-cdn.multiscreensite.com/137f54ce/files/uploaded/MAXI%20ALGODON.JPG",
+    description: "Esta fibra está compuesta de algodón y otras fibras recicladas. Es ideal para tejer amigurumis, blusas, sacos, bolsos, entre otros productos. Puedes tejerla en tecnicas como crochet.",
+    features: ["100% algodón", "Premiun", "Alta Calidad", "Resistente"]
   },
   {
     id: 102,
     name: "Relleno",
     price: 25.00,
     brand: "sepa",
-    image: "https://i.pinimg.com/736x/32/f4/aa/32f4aac86061b9a2d92bbdfd4bce6746.jpg",
-    description: "denme ideas.",
-    features: ["denme", "ideas", "equipo", "xd"]
+    image: "https://m.media-amazon.com/images/I/61GNLecWBCL.jpg",
+    description: "Algodón Siliconado en paquete por 100 gramos, es una fibra antibacteriana, antialérgica y antiácaros, además es lavable, durable y resistente perfecta para rellenar tus amigurumis y todo tipo de manualidades..",
+    features: ["siliconado", "Relleno", "Suave", "Resistente"]
   },
   {
     id: 103,
     name: "Agujas de Crochet",
     price: 45.00,
-    brand: "pos agujas que mas quieren",
-    image: "https://i.pinimg.com/736x/47/cb/5d/47cb5d782683e3df266c913abb68b892.jpg",
-    description: "Las agujas",
-    features: ["a", "e", "i", "u"]
+    brand: "Agujas Crochet diferentes medidas",
+    image: "agujas.jpg",
+    description: "Este set de agujas de crochet viene con 8 agujas. Diferentes medidas para que tejas todos los calibres delgados de lana. Su mango de silicona las hace una de las favoritas de nuestros tejedores.",
+    features: ["Diferentes Medidas", "Metalicas", "Mango Silicona", "Precisas", "inoxidables"]
   },
   {
     id: 104,
-    name: "Agujas de Crochet (otra vez)",
+    name: "Tijeras",
     price: 45.00,
-    brand: "pos agujas que mas quieren",
-    image: "https://i.pinimg.com/1200x/66/d3/29/66d329639100349df71279a1c84cdd9d.jpg",
-    description: "AAAA",
-    features: ["a", "e", "i", "u"]
+    brand: "Tijeras Para Crochet",
+    image: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00694128878877L3.jpg",
+    description: "paquete de 2 tijeras de 11 pulgadas, corte preciso, cuchillas de acero inoxidable de la más alta calidad, bordes afilados y larga vida útil de corte. Para decoupage, cartón, tela, fotos, etc.",
+    features: ["Acero inoxidable", "multiusos", "Azul y rosa", "Mango de goma"]
+  },
+  {
+    id: 105,
+    name: "Aguja Lanera clasica",
+    price: 45.00,
+    brand: "Aguja lanera para coser las partes",
+    image: "Aguja lanera.jpg ",
+    description: "Aguja lanera punta roma Ideal para lanas de grosor medio y para esconder las hebras sueltas del tejido el Numero de la aguja depende del grosor de la lana a emplear.",
+    features: ["Acero inoxidable", "Punta roma", "Multiples medidas"]
+  },
+  {
+    id: 106,
+    name: "Pack 100 Ojos y narices de seguridad",
+    price: 45.00,
+    brand: "Lotes de Ojos y narices para crochet",
+    image: "Ojos.jpg",
+    description: "Diferentes piezas de ojos y narices de seguridad, juego de manualidades con caja de almacenamiento",
+    features: ["plástico duradero", "tamaños y formas variadas", "Colores Variados","Almacenamiento incluido"]
+  },
+  {
+    id: 107,
+    name: "Marcadores de Puntos X20",
+    price: 45.00,
+    brand: "Lote de 20",
+    image: "Ganchos.jpg",
+    description: "Set de marcadores tipo imperdible para crochet. 10 colores diferentes para organizar tus tejidos. Fáciles de usar, no dañan el hilo. Ideales para mochilas, amigurumis y prendas",
+    features: ["Metálicos", "Pintados", "Lote de 20"]
   }
 ];
 
@@ -128,17 +237,25 @@ if (document.querySelector('.carousel-container')) {
 if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
+// RENDER PRODUCTOS CON DESCRIPCIONES ÚNICAS Y PROMO 2X1
 function renderProducts() {
   if (!productGrid) return;
   productGrid.innerHTML = '';
   products.forEach(product => {
     const card = document.createElement('div');
     card.className = 'product-card';
+
+    let promoHTML = '';
+    if (product.promo) {
+      promoHTML = `<span class="promo-badge">${product.promo}</span>`;
+    }
+
     card.innerHTML = `
+      ${promoHTML}
       <img src="${product.image}" alt="${product.name}" loading="lazy">
       <div class="product-info">
         <h3>${product.name}</h3>
-        <p>Hecho a mano con amor</p>
+        <p>${product.description}</p>
         <div class="price">$${product.price.toFixed(2)}</div>
         <button class="btn-add" onclick="addToCart(${product.id})">
           Agregar al carrito
@@ -149,7 +266,7 @@ function renderProducts() {
   });
 }
 
-// Renderizar materiales con botón de agregar al carrito osea la imagencita esa que sale en la pestaña de carrito
+// Renderizar materiales con botón de agregar al carrito
 function renderMaterials() {
   const materialsList = document.getElementById('materialsList');
   if (!materialsList) return;
@@ -301,10 +418,9 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-//no toquen el carrusel esa vaina costo acomodarla AAAA
 //nota: acortar el codigo. como? ni idea
 
-// vaina esa que pone una vaina morada debajo de la vaina esa(por fin funciona en Productos también)
+// linea morada debajo de pagina
 document.addEventListener('DOMContentLoaded', () => {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navLinks = document.querySelectorAll('.nav a');
@@ -318,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   renderCarousel();
-  renderProducts();
+  renderProducts(); 
   renderMaterials();
   updateCartUI();
 });
