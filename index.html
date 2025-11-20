@@ -57,7 +57,7 @@
     </div>
   </section>
 
-  <!-- CARRITO LATERAL (aca van los productos al comprarlos) -->
+  <!-- CARRITO LATERAL -->
   <div class="cart-sidebar" id="cartSidebar">
     <div class="cart-header">
       <h3>Carrito <span id="cartItemsCount">(0)</span></h3> 
@@ -74,4 +74,45 @@
 
   <script src="script.js"></script>
 </body>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">
+        <img src="logito.jpg" alt="Kuki Crochet">
+        kuki<span>crochet</span>
+      </a>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/kukicrochet29?igsh=N2ltNXRnbTZmZnY3"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@kukii.crochet?_r=1&_t=ZS-91XefDrYk5v"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 kuki crochet • Hecho con amor y mucho hilo • Todos los derechos reservados
+    </div>
+  </div>
+</footer>
+
+<!-- MODALES DE COMPRA -->
+<div class="modal" id="modalInvoice">
+  <div class="modal-content">
+    <h3>Resumen de tu <span>compra</span></h3>
+    <div class="invoice-details" id="invoiceDetails"></div>
+    <div class="modal-buttons">
+      <button class="btn-modal btn-cancel" onclick="closeModal('modalInvoice')">Cancelar</button>
+      <button class="btn-modal btn-confirm" onclick="confirmPurchase()">Confirmar compra</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modalSuccess">
+  <div class="modal-content">
+    <h3>¡Gracias por tu compra!</h3>
+    <p>Tu pedido está siendo preparado con mucho cariño</p>
+    <div style="font-size:4.5rem;margin:1.5rem 0;">Tejido</div>
+    <button class="btn-modal btn-confirm" onclick="closeModal('modalSuccess'); closeCartSidebar();">
+      ¡Genial!
+    </button>
+  </div>
+</div>
 </html>
